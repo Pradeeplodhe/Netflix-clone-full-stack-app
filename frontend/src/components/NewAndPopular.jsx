@@ -62,6 +62,7 @@ export default function NewAndPopular() {
                 key={index}
                 className="flex-shrink-0 w-[180px] sm:w-[220px] md:w-[240px] snap-center group perspective-1000"
               >
+                {/* // */}
                 <div className="relative overflow-hidden rounded-3xl shadow-lg group-hover:shadow-2xl transform transition-all duration-500 hover:scale-105 hover:rotate-[1deg]">
                   <img
                     src={
