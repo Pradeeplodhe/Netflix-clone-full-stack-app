@@ -10,7 +10,7 @@ import Navbar from "./components/Navbar";
 import TVShows from "./components/TvShow";
 import Movies from "./components/Movies";
 import NewAndPopular from "./components/NewAndPopular";
-
+import UserProfile from "./components/UserProfile";
 
 
 export default function App() {
@@ -40,6 +40,7 @@ export default function App() {
     <Route path="/tv-shows" element={<TVShows />}/>
      <Route path="/movies" element={<Movies/>}/>
    <Route path="/latest" element={<NewAndPopular/>}/>
+   <Route path="/profile" element={<UserProfile/>}/>
   
   </Routes>
 </div>

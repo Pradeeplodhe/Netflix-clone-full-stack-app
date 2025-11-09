@@ -7,4 +7,4 @@ const userSchema = new mongoose.Schema({
   myList: [String],
 });
 
-export default mongoose.model("User", userSchema);
+export default mongoose.model("UserNetflix", userSchema);

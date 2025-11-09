@@ -34,7 +34,8 @@ export default function Navbar() {
           <Link to="/latest">New & Popular</Link>
           <Link to="/my-list">My List</Link>
         <Link to="/search">Search</Link>
-       
+        <Link to="/profile">Profile</Link>
+        
         </div>
       </div>
 
