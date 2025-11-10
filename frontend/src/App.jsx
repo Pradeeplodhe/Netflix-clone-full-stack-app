@@ -11,39 +11,48 @@ import TVShows from "./components/TvShow";
 import Movies from "./components/Movies";
 import NewAndPopular from "./components/NewAndPopular";
 import UserProfile from "./components/UserProfile";
-
-
+import Footer from "./components/Footer";
+import Notification from "./components/Notification";
 export default function App() {
   return (
     
      
-      // <div className="bg-black min-h-screen text-white">
-      //   <Navbar />
-      //   <Routes>
-      //     {/* <Route path="/" element={<Home />} /> */}
-      //     <Route path="/search" element={<Search />} />
-      //     <Route path="/login" element={<Login />} />
-      //     <Route path="/signup" element={<Signup />} />
-      //     {/* <Route path="*" element={<Navigate to="/" />} /> */}
-      //   </Routes>
-      // </div>
+      
     
 
 <>
+ 
+        <Navbar />
 
   <div className="bg-black min-h-screen text-white">
-  <Navbar/>
+  
+  {/* <Login/> */}
+  
   <Routes  >
-       <Route path="/" element={<Home />}/>
+    {/* <Route path="/nav" element={<Navbar/>}/> */}
+  
+       <Route path="/" element={<Login />}/>
+        <Route path="/chooseplan" element={<ChoosePlan />}/>
+<Route path="/payment" element={<PaymentPage />}/>
+
+
+         <Route path="/notification" element={<Notification />}/>
+
+       <Route path="/home" element={<Home />}/>
 
     <Route path="/search" element={<Search />}/>
     <Route path="/tv-shows" element={<TVShows />}/>
      <Route path="/movies" element={<Movies/>}/>
    <Route path="/latest" element={<NewAndPopular/>}/>
    <Route path="/profile" element={<UserProfile/>}/>
-  
+    <Route path="/login" element={<Login/>}/>
+    <Route path="/signup" element={<Signup/>}/>
+
   </Routes>
 </div>
+
+   <Footer />
+     
 </>
 
 

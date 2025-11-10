@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link,Navigate,useNavigate } from "react-router-dom";
 
 export default function ChoosePlan() {
+  const navigate=useNavigate();
   const plans = [
     {
       name: "Basic",
@@ -155,10 +157,47 @@ export default function ChoosePlan() {
         ))}
       </motion.div>
 
+
+
+<motion.button
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-all duration-300"
+>
+  Proceed to Payment
+</motion.button>
+
       {/* Footer */}
       <div className="relative z-10 mt-20 text-gray-500 text-sm text-center pb-10">
-        <p>Plans start at just ₹199. Enjoy on your phone, tablet, laptop, and TV.</p>
+        
+        <p>Plans start at just ₹1299. Enjoy on your phone, tablet, laptop, and TV.</p>
+      <motion.button
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  className="bg-red-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-all duration-300"
+onClick={()=>{
+  console.log("paln button")
+  navigate("/payment")
+}}
+
+>
+  Proceed to Payment
+</motion.button>
+
+<button
+  className="bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-500 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-red-600/40 transition-all duration-300"
+
+onClick={()=>{
+  console.log("paln button")
+  navigate("/home")
+}}
+>
+  Use 7 Days Free
+</button>
+
+
       </div>
+
     </div>
   );
 }

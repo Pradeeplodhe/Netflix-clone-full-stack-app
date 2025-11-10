@@ -28,7 +28,7 @@ export default function Navbar() {
           NETFLIX
         </h1>
         <div className="hidden md:flex space-x-6 text-gray-200 text-sm">
-          <Link to="/">Home</Link>
+          <Link to="/home">Home</Link>
           <Link to="/tv-shows">TV Shows</Link>
           <Link to="/movies">Movies</Link>
           <Link to="/latest">New & Popular</Link>
@@ -45,9 +45,9 @@ export default function Navbar() {
           onClick={() => navigate("/search")}
           className="w-5 h-5 cursor-pointer hover:text-white"
         />
-        <Bell className="w-5 h-5 cursor-pointer hover:text-white" />
+        <Bell     onClick={() => navigate("/notification")}  className="w-5 h-5 cursor-pointer hover:text-white" />
         <div
-          onClick={() => navigate("/login")}
+          onClick={() => navigate("/profile")}
           className="flex items-center cursor-pointer hover:text-white"
         >
           <User className="w-6 h-6" />
