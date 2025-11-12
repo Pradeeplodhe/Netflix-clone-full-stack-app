@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Pencil, Camera, LogOut } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
 export default function UserProfile() {
+  const navigate=useNavigate();
   const [name, setName] = useState("Pradeep Lodhi");
   const [editing, setEditing] = useState(false);
   const [avatar, setAvatar] = useState(
@@ -10,13 +11,20 @@ export default function UserProfile() {
 
   const handleAvatarChange = (e) => {
     const file = e.target.files[0];
-    if (file) setAvatar(URL.createObjectURL(file));
-  };
+    if (file){
+
+    setAvatar(URL.createObjectURL(file));
+      localStorage.setItem("dp",file);
+  }
+  }; 
+ 
+  const mail = localStorage.getItem("userMail");
 
   return (
     <div className="min-h-screen relative flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-black via-neutral-900 to-black text-white">
       {/* Background Animations */}
-      <div className="absolute inset-0">
+     <div className="absolute inset-0 -z-10">
+
         <div className="absolute w-[700px] h-[700px] bg-red-700/40 blur-[180px] rounded-full top-[-300px] left-[-200px] animate-pulse"></div>
         <div className="absolute w-[600px] h-[600px] bg-red-600/40 blur-[200px] rounded-full bottom-[-250px] right-[-200px] animate-pulse delay-2000"></div>
       </div>
@@ -30,7 +38,7 @@ export default function UserProfile() {
       <div className="relative group transition-transform duration-500 hover:scale-105">
         <div className="w-44 h-44 sm:w-52 sm:h-52 rounded-full overflow-hidden border-[4px] border-red-600 shadow-[0_0_50px_rgba(255,0,0,0.4)] backdrop-blur-md transition-all duration-500">
           <img
-            src={avatar}
+            src={localStorage.getItem("dp")}
             alt="User Avatar"
             className="w-full h-full object-cover group-hover:opacity-90 transition-all duration-300"
           />
@@ -84,7 +92,7 @@ export default function UserProfile() {
         <div className="space-y-3 text-gray-400 text-base">
           <p>
             <span className="font-semibold text-white">Email:</span>{" "}
-            pradeep@example.com
+             {mail}
           </p>
           <p>
             <span className="font-semibold text-white">Plan:</span>{" "}
@@ -100,7 +108,17 @@ export default function UserProfile() {
       </div>
 
       {/* Sign Out Button */}
-      <button className="mt-12 bg-gradient-to-r from-red-700 via-red-600 to-red-500 hover:from-red-600 hover:to-red-400 px-8 py-3 rounded-2xl text-lg font-semibold flex items-center gap-3 shadow-[0_0_30px_rgba(255,0,0,0.4)] hover:shadow-[0_0_40px_rgba(255,0,0,0.7)] transform hover:scale-105 transition-all duration-300 active:scale-95">
+      <button className="mt-12 bg-gradient-to-r from-red-700 via-red-600 to-red-500 hover:from-red-600 hover:to-red-400 px-8 py-3 rounded-2xl text-lg font-semibold flex items-center gap-3 shadow-[0_0_30px_rgba(255,0,0,0.4)] hover:shadow-[0_0_40px_rgba(255,0,0,0.7)] transform hover:scale-105 transition-all duration-300 active:scale-95"
+      onClick={()=>{
+        console.log("log out")
+        alert("log out")
+
+        localStorage.removeItem("token");  // Replace "token" with your key name
+      navigate("/login")
+      }}
+      >
+    
+        {/* log out */}
         <LogOut size={22} /> Sign Out
       </button>
 

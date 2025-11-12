@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 
+import userMoviesDataListRouter from "./routes/User.js";
+
 dotenv.config();
 const app = express();
 
@@ -16,7 +18,7 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.log(err));
 
 app.use("/api/auth", authRoutes);
-// app.use("/api/user", userRoutes);
+app.use("/api/usermoviesDataList",userMoviesDataListRouter );
 
 app.get("/", (req, res) => res.send("Netflix API Running ✅"));
 

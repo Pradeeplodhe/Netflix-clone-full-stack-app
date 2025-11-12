@@ -23,6 +23,7 @@ export default function Login() {
         alert("Login successful!");
         // ✅ optionally store token
         localStorage.setItem("token", data.token);
+        localStorage.setItem("userMail",email)
         navigate("/chooseplan"); // redirect to home page
       } else {
         alert(data.message || "Invalid credentials");

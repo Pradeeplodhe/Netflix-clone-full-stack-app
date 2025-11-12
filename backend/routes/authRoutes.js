@@ -31,6 +31,7 @@ router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
+    // localStorage.setItem("userData",user)
     if (!user) return res.status(400).json({ message: "Invalid email" });
 
     const isMatch = await bcrypt.compare(password, user.password);
