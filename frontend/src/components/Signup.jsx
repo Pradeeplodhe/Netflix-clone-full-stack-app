@@ -35,18 +35,15 @@ export default function Signup() {
   return (
     <div className="relative h-screen bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/7bccc68b-8b8e-4e57-b739-3a20b17a5c8c/9b8321a0-45b0-43d4-9c16-c933bb4e65ed/IN-en-20241104-popsignuptwoweeks-perspective_alpha_website_large.jpg')] bg-cover bg-center overflow-hidden">
       {/* Dark Overlay */}
+
+      
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80" />
 
       {/* Netflix Logo */}
-      <div className="absolute top-6 left-10">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
-          alt="Netflix Logo"
-          className="w-32"
-        />
-      </div>
-
+     
       {/* Signup Form */}
+
+      
       <div className="flex justify-center items-center h-full relative z-10 px-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -54,8 +51,11 @@ export default function Signup() {
           transition={{ duration: 0.7 }}
           className="bg-black/75 backdrop-blur-md p-10 rounded-2xl w-full max-w-md shadow-2xl border border-red-600/20"
         >
+
+
+          
           <h1 className="text-4xl font-bold mb-6 text-center text-white drop-shadow-lg">
-            Create Account
+            Create Account in WatchNChat🍿
           </h1>
 
           <form className="flex flex-col space-y-5" onSubmit={handleSignup}>
@@ -86,7 +86,7 @@ export default function Signup() {
               whileTap={{ scale: 0.98 }}
               className="bg-red-600 py-3 rounded-lg font-semibold hover:bg-red-700 transition-all shadow-md hover:shadow-red-600/50"
             >
-              Sign Up
+              Sign Up WatchNChat🍿
             </motion.button>
           </form>
 
@@ -96,7 +96,7 @@ export default function Signup() {
               to="/login"
               className="text-white font-medium hover:underline hover:text-red-500 transition"
             >
-              Sign In
+              Sign In WatchNChat🍿
             </Link>
           </p>
 

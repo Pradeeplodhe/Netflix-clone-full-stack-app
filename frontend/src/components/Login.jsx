@@ -21,10 +21,9 @@ export default function Login() {
 
       if (res.ok) {
         alert("Login successful!");
-        // ✅ optionally store token
         localStorage.setItem("token", data.token);
-        localStorage.setItem("userMail",email)
-        navigate("/chooseplan"); // redirect to home page
+        localStorage.setItem("userMail", email);
+        navigate("/chooseplan");
       } else {
         alert(data.message || "Invalid credentials");
       }
@@ -35,18 +34,24 @@ export default function Login() {
   }
 
   return (
-    <div className="relative h-screen bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/7bccc68b-8b8e-4e57-b739-3a20b17a5c8c/9b8321a0-45b0-43d4-9c16-c933bb4e65ed/IN-en-20241104-popsignuptwoweeks-perspective_alpha_website_large.jpg')] bg-cover bg-center">
+    <div
+     
+    
+      className="relative h-screen bg-cover bg-center"
+      style={{
+        backgroundImage:
+          "url(https://www.bing.com/ck/a?!&&p=ccd173991a673c2fc1c85eafada89faa35684f13d83caf2d402c9a171348f5a7JmltdHM9MTc2MjkwNTYwMA&ptn=3&ver=2&hsh=4&fclid=37d21b21-a316-6181-02d6-0885a2176052&u=a1L2ltYWdlcy9zZWFyY2g_cT1pbWFnZSZpZD1FMkFEMTkzQTg4Mzg1MERDOTZBOTYwMTNEQjVGMTlBMjlDQTY2MkY4JkZPUk09SVFGUkJB)",
+      }}
+    >
+
+       <div>
+
+         </div>
       {/* Black overlay */}
       <div className="absolute inset-0 bg-black/70" />
 
       {/* Netflix logo */}
-      <div className="absolute top-6 left-10">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
-          alt="Netflix Logo"
-          className="w-32"
-        />
-      </div>
+      
 
       {/* Login form */}
       <div className="flex justify-center items-center h-full relative z-10 px-4">
@@ -78,7 +83,8 @@ export default function Login() {
               type="submit"
               className="bg-red-600 py-3 rounded font-semibold hover:bg-red-700 transition"
             >
-              Sign In
+             
+              Sign In WatchNChat🍿
             </button>
 
             <div className="flex justify-between items-center text-sm text-gray-400">
@@ -90,7 +96,7 @@ export default function Login() {
           </form>
 
           <p className="text-gray-400 mt-6 text-center">
-            New to Netflix?{" "}
+            New to WatchNChat{" "}
             <Link to="/signup" className="text-white hover:underline">
               Sign up now
             </Link>

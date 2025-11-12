@@ -22,12 +22,13 @@ export default function Navbar() {
       {/* Left */}
       <div className="flex items-center space-x-8">
         <h1
+  
           onClick={() => navigate("/")}
-          className="text-3xl font-bold text-red-600 cursor-pointer tracking-wide"
+          className="text-4xl font-bold text-red-600 cursor-pointer tracking-wide"
         >
-          NETFLIX
+         watch&chat
         </h1>
-        <div className="hidden md:flex space-x-6 text-gray-200 text-sm">
+        <div className="hidden md:flex space-x-6 text-gray-200 text-big">
           <Link to="/home">Home</Link>
           <Link to="/tv-shows">TV Shows</Link>
           <Link to="/movies">Movies</Link>
@@ -35,6 +36,7 @@ export default function Navbar() {
           <Link to="/my-list">My List</Link>
         <Link to="/search">Search</Link>
         <Link to="/profile">Profile</Link>
+         <Link to="https://chat-application-full-stack-five.vercel.app">Chat</Link>
         
         </div>
       </div>
