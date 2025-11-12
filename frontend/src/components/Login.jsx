@@ -11,7 +11,7 @@ export default function Login() {
     e.preventDefault(); // 🛑 stop form reload
 
     try {
-      const res = await fetch("http://localhost:7000/api/auth/login", {
+      const res = await fetch("https://netflix-clone-full-stack-app.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

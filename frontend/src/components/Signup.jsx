@@ -12,7 +12,7 @@ export default function Signup() {
     e.preventDefault(); // 🛑 Prevent page reload
 
     try {
-      const res = await fetch("http://localhost:7000/api/auth/signup", {
+      const res = await fetch("https://netflix-clone-full-stack-app.onrender.com/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password }),

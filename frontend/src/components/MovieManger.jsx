@@ -15,7 +15,7 @@ export default function MovieManager() {
 
   // 🟢 Fetch movies on mount
   useEffect(() => {
-    fetch("http://localhost:7000/api/usermoviesDataList/getAllmoviesData", {
+    fetch("https://netflix-clone-full-stack-app.onrender.com/api/usermoviesDataList/getAllmoviesData", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +43,7 @@ export default function MovieManager() {
 
     try {
       const response = await fetch(
-        "http://localhost:7000/api/usermoviesDataList/post",
+        "https://netflix-clone-full-stack-app.onrender.com/api/usermoviesDataList/post",
         {
           method: "POST",
           headers: {
